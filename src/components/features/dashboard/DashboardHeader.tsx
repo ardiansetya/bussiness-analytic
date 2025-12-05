@@ -1,9 +1,8 @@
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Separator } from '@/components/ui/separator';
-import { Bell, Search } from 'lucide-react';
-import Image from 'next/image';
-import React from 'react'
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Separator } from "@/components/ui/separator";
+import { Bell, Search } from "lucide-react";
+import UserHeader from "./UserHeader";
 
 const DashboardHeader = () => {
   return (
@@ -33,22 +32,10 @@ const DashboardHeader = () => {
 
         <Separator orientation="vertical" />
 
-        <div className="flex items-center gap-3">
-          <Image
-            src={"https://github.com/shadcn.png"}
-            alt="user image"
-            width={36}
-            height={36}
-            className="rounded-full"
-          />
-          <div>
-            <h3 className="font-semibold">Ardian</h3>
-            <p className="text-muted-foreground text-sm">Bussiness Owner</p>
-          </div>
-        </div>
+        <UserHeader />
       </div>
     </div>
   );
-}
+};
 
-export default DashboardHeader
+export default DashboardHeader;
