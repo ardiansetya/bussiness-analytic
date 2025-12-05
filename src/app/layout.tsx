@@ -1,11 +1,11 @@
 import "@/styles/globals.css";
 
 import type { Metadata } from "next";
-import { Geist } from "next/font/google";
+import { Plus_Jakarta_Sans } from "next/font/google";
 
-import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
-import { TRPCReactProvider } from "@/trpc/react";
 import { AppSidebar } from "@/components/AppSidebar";
+import { SidebarProvider } from "@/components/ui/sidebar";
+import { TRPCReactProvider } from "@/trpc/react";
 
 export const metadata: Metadata = {
   title: "Create T3 App",
@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   icons: [{ rel: "icon", url: "/favicon.ico" }],
 };
 
-const geist = Geist({
+const jakarta = Plus_Jakarta_Sans({
   subsets: ["latin"],
   variable: "--font-geist-sans",
 });
@@ -22,14 +22,12 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html className={`${geist.variable}`} lang="en">
+    <html className={`${jakarta.variable}`} lang="en">
       <body>
         <TRPCReactProvider>
           <SidebarProvider>
             <AppSidebar />
-            <main className="flex-1">
-              {children}
-            </main>
+            <main className="flex-1">{children}</main>
           </SidebarProvider>
         </TRPCReactProvider>
       </body>
