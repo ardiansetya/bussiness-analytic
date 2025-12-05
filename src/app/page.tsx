@@ -11,6 +11,8 @@ export default async function Home() {
     redirect("/login");
   }
 
+
+
   return (
     <HydrateClient>
       <main className="min-h-screen px-6 py-4 bg-secondary">

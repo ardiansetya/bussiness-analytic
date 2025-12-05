@@ -26,7 +26,7 @@ import {
 import { cn } from "@/lib/utils";
 import { authClient } from "@/server/better-auth/client";
 import Link from "next/link";
-import { redirect, usePathname, useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 
 // Menu items.
 const items = [
