@@ -6,6 +6,7 @@ import { Plus_Jakarta_Sans } from "next/font/google";
 import { AppSidebar } from "@/components/AppSidebar";
 import { SidebarProvider } from "@/components/ui/sidebar";
 import { TRPCReactProvider } from "@/trpc/react";
+import MySidebarProvider from "@/components/SidebarProvider";
 
 export const metadata: Metadata = {
   title: "Create T3 App",
@@ -26,7 +27,7 @@ export default function RootLayout({
       <body>
         <TRPCReactProvider>
           <SidebarProvider>
-            <AppSidebar />
+            <MySidebarProvider/>
             <main className="flex-1">{children}</main>
           </SidebarProvider>
         </TRPCReactProvider>
