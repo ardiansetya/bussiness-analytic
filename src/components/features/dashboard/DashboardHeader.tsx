@@ -1,0 +1,54 @@
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { Separator } from '@/components/ui/separator';
+import { Bell, Search } from 'lucide-react';
+import Image from 'next/image';
+import React from 'react'
+
+const DashboardHeader = () => {
+  return (
+    <div className="flex justify-between">
+      <div>
+        {" "}
+        <h1 className="font-bold text-4xl">Dashboard</h1>
+        <p className="text-lg text-muted-foreground">
+          Welcome Back! Here's your financial overview
+        </p>
+      </div>
+
+      {/* right side */}
+      <div className="flex gap-4 items-center">
+        <div className="relative">
+          <Search
+            size={18}
+            className="absolute top-4 left-3 text-muted-foreground"
+          />
+          <Input className="px-10 rounded-xl py-6" placeholder="Search..." />
+        </div>
+
+        <Button size={"lg"} variant={"outline"}>
+          {" "}
+          <Bell />{" "}
+        </Button>
+
+        <Separator orientation="vertical" />
+
+        <div className="flex items-center gap-3">
+          <Image
+            src={"https://github.com/shadcn.png"}
+            alt="user image"
+            width={36}
+            height={36}
+            className="rounded-full"
+          />
+          <div>
+            <h3 className="font-semibold">Ardian</h3>
+            <p className="text-muted-foreground text-sm">Bussiness Owner</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export default DashboardHeader

@@ -78,38 +78,36 @@ export function AppSidebar() {
           <SidebarGroupContent>
             <SidebarMenu className="mt-2">
               {items.map((item) => (
-                <>
-                  <SidebarMenuItem key={item.title}>
-                    <div className="relative">
-                      {pathname === item.url && (
-                        <div className="absolute left-0 w-1 h-12 bg-accent-foreground rounded-r-xl" />
-                      )}
-                    </div>
-                    <SidebarMenuButton
-                      isActive={pathname === item.url}
-                      className={cn("px-4 py-2 ")}
-                      size={"lg"}
-                      asChild>
-                      <Link href={item.url}>
-                        <item.icon
-                          className={cn(
-                            "text-muted-foreground size-5! hover:text-accent-foreground",
-                            pathname === item.url &&
-                              "text-accent-foreground font-semibold"
-                          )}
-                        />
-                        <span
-                          className={cn(
-                            "text-xl text-secondary-foreground hover:text-accent-foreground",
-                            pathname === item.url &&
-                              "text-accent-foreground font-semibold"
-                          )}>
-                          {item.title}
-                        </span>
-                      </Link>
-                    </SidebarMenuButton>
-                  </SidebarMenuItem>
-                </>
+                <SidebarMenuItem key={item.title}>
+                  <div className="relative">
+                    {pathname === item.url && (
+                      <div className="absolute left-0 w-1 h-12 bg-accent-foreground rounded-r-xl" />
+                    )}
+                  </div>
+                  <SidebarMenuButton
+                    isActive={pathname === item.url}
+                    className={cn("px-4 py-2 ")}
+                    size={"lg"}
+                    asChild>
+                    <Link href={item.url}>
+                      <item.icon
+                        className={cn(
+                          "text-muted-foreground size-5! hover:text-accent-foreground",
+                          pathname === item.url &&
+                            "text-accent-foreground font-semibold"
+                        )}
+                      />
+                      <span
+                        className={cn(
+                          "text-xl text-secondary-foreground hover:text-accent-foreground",
+                          pathname === item.url &&
+                            "text-accent-foreground font-semibold"
+                        )}>
+                        {item.title}
+                      </span>
+                    </Link>
+                  </SidebarMenuButton>
+                </SidebarMenuItem>
               ))}
             </SidebarMenu>
           </SidebarGroupContent>
