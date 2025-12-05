@@ -1,7 +1,7 @@
 import { getSession } from "@/server/better-auth/server";
 import Image from "next/image";
 
-const UserHeader = async () => {
+const UserHeaderDashboard = async () => {
   const session = await getSession();
   return (
     <div className="flex items-center gap-3">
@@ -20,4 +20,4 @@ const UserHeader = async () => {
   );
 };
 
-export default UserHeader;
+export default UserHeaderDashboard;

@@ -15,9 +15,7 @@ export default async function Home() {
     <HydrateClient>
       <main className="min-h-screen px-6 py-4 bg-secondary">
         {/* header dashboard */}
-       <DashboardHeader/>
-
-       
+        <DashboardHeader />
       </main>
     </HydrateClient>
   );

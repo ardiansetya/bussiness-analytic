@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Separator } from "@/components/ui/separator";
 import { Bell, Search } from "lucide-react";
-import UserHeader from "./UserHeader";
+import UserHeaderDashboard from "./UserHeader";
 
 const DashboardHeader = () => {
   return (
@@ -32,7 +32,7 @@ const DashboardHeader = () => {
 
         <Separator orientation="vertical" />
 
-        <UserHeader />
+        <UserHeaderDashboard />
       </div>
     </div>
   );

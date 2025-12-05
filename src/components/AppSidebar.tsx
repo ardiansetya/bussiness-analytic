@@ -24,8 +24,9 @@ import {
   SidebarMenuItem,
 } from "@/components/ui/sidebar";
 import { cn } from "@/lib/utils";
+import { authClient } from "@/server/better-auth/client";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { redirect, usePathname, useRouter } from "next/navigation";
 
 // Menu items.
 const items = [
@@ -58,6 +59,14 @@ const items = [
 
 export function AppSidebar() {
   const pathname = usePathname();
+
+  const router = useRouter();
+
+  const handleLogout = async () => {
+    await authClient.signOut();
+    router.replace("/login");
+    router.refresh();
+  };
 
   return (
     <Sidebar>
@@ -124,7 +133,10 @@ export function AppSidebar() {
             Upload your katest financial data to get updated risk scores
           </p>
         </div>
-        <SidebarMenuButton className="hover:bg-destructive/10" size={"lg"}>
+        <SidebarMenuButton
+          onClick={handleLogout}
+          className="hover:bg-destructive/10 hover:cursor-pointer"
+          size={"lg"}>
           <div className="text-xl flex items-center gap-3 px-4 text-destructive">
             <LogOutIcon />
             Logout

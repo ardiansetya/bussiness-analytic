@@ -7,6 +7,7 @@ import { AppSidebar } from "@/components/AppSidebar";
 import { SidebarProvider } from "@/components/ui/sidebar";
 import { TRPCReactProvider } from "@/trpc/react";
 import MySidebarProvider from "@/components/SidebarProvider";
+import { getSession } from "@/server/better-auth/server";
 
 export const metadata: Metadata = {
   title: "Create T3 App",
@@ -19,15 +20,18 @@ const jakarta = Plus_Jakarta_Sans({
   variable: "--font-geist-sans",
 });
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
+
+  const session = await getSession();
+  console.log(session);
   return (
     <html className={`${jakarta.variable}`} lang="en">
       <body>
         <TRPCReactProvider>
           <SidebarProvider>
-            <MySidebarProvider/>
+            {!session ? null : <AppSidebar /> }
             <main className="flex-1">{children}</main>
           </SidebarProvider>
         </TRPCReactProvider>
