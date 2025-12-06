@@ -1,5 +1,6 @@
-"use client"
+"use client";
 
+import HeroAuth from "@/components/features/auth/HeroAuth";
 import LoginForm from "@/components/features/auth/LoginForm";
 import { authClient } from "@/server/better-auth/client";
 import { useRouter } from "next/navigation";
@@ -21,7 +22,8 @@ const LoginFormPage = () => {
   return (
     <section className="bg-gray-50">
       <div className="container mx-auto flex min-h-screen flex-col justify-center">
-        <div className="flex flex-row items-center justify-center">
+        <div className="flex flex-row items-center justify-between gap-4">
+          <HeroAuth />
           <LoginForm mode="/login" />
         </div>
       </div>
