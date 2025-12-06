@@ -87,7 +87,7 @@ export function AppSidebar() {
           <SidebarGroupContent>
             <SidebarMenu className="mt-2">
               {items.map((item) => (
-                <SidebarMenuItem key={item.title}>
+                <SidebarMenuItem key={item.title} className="group">
                   <div className="relative">
                     {pathname === item.url && (
                       <div className="absolute left-0 w-1 h-12 bg-accent-foreground rounded-r-xl" />

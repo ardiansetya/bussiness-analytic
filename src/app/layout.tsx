@@ -5,9 +5,8 @@ import { Plus_Jakarta_Sans } from "next/font/google";
 
 import { AppSidebar } from "@/components/AppSidebar";
 import { SidebarProvider } from "@/components/ui/sidebar";
-import { TRPCReactProvider } from "@/trpc/react";
-import MySidebarProvider from "@/components/SidebarProvider";
 import { getSession } from "@/server/better-auth/server";
+import { TRPCReactProvider } from "@/trpc/react";
 
 export const metadata: Metadata = {
   title: "Create T3 App",
@@ -17,7 +16,7 @@ export const metadata: Metadata = {
 
 const jakarta = Plus_Jakarta_Sans({
   subsets: ["latin"],
-  variable: "--font-geist-sans",
+  variable: "--font-jakarta-sans",
 });
 
 export default async function RootLayout({

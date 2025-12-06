@@ -9,8 +9,6 @@ const LoginFormPage = () => {
   const router = useRouter();
   const session = authClient.useSession();
 
-
-
   useEffect(() => {
     if (!session) {
       router.push("/login");
